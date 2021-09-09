@@ -4,30 +4,45 @@
 #
 # ---------------------------------------------------------
 #
-# Este script executa instaladores dentro da própria pasta de forma forma automática
+# Este script executa instaladores dentro da própria pasta de forma forma automática, sendo necessário apenas passar a distribuição em uso
 #
 # Autor/Mantenedor: Thaz Sobral <thazsobral@gmail.com>
 # 
 # Exemplo de execução
-# ./installer.sh
-# $ Instalando VSCode ...
-# $ VSCode instaldo!
+# ./installer.sh install ubuntu
+# $ Installing NVM ...
+# $ NVM successfully installed :)
+#
+# ./installer.sh install ubuntu
+# $ Configuring NVM ...
+# $ NVM configured successfuly :)
 #
 # Controle de versões
 # Versão: 1.0.0
 #
 # Licença: MIT
 
-# acessa a pasta com os arquivos de instalação de programas
-FILES=`ls`
+function loopFiles {
+    FILES=`ls $CURRENT_DIR`
+    for i in $FILES
+    do
+        chmod a+x "$CURRENT_DIR/$i"
+        source "$CURRENT_DIR/$i"
+    done
+}
 
-# percorre todos os arquivos da lista
-for i in $FILES
-do
-    if [ $i != ${0:2} ] # se o arquivo for diferente do nome do arquivo
-        then
-            chmod a+x $i
-            ./$i
-    fi
-done
-    
+DIST=$2
+
+case $1 in
+    "install")
+        CURRENT_DIR="./programs/$DIST"
+        ;;
+    "config")
+        CURRENT_DIR="./configurations/$DIST"
+        ;;
+    *)
+        echo "Choose a valid command: install or config"
+        ;;
+esac
+
+loopFiles
