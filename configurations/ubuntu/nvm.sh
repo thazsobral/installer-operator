@@ -19,6 +19,7 @@ then
         if [ $? == 0 ] # if last command success
         then
             echo -e "Yarn successfully installed :)\n"
+            echo -e "NVM configured successfully :)\n"
         fi
     fi
 fi
