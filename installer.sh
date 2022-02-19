@@ -13,7 +13,7 @@
 # $ Installing NVM ...
 # $ NVM successfully installed :)
 #
-# ./installer.sh install ubuntu
+# ./installer.sh config ubuntu
 # $ Configuring NVM ...
 # $ NVM configured successfuly :)
 #
