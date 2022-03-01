@@ -1,4 +1,6 @@
 # installer-operator
+![license/https://shields.io/category/license](https://img.shields.io/github/license/thazsobral/installer-operator)
+
 Automatizador de tarefas, de instalação e configuração de programas.
 
 Esse promete servir de base para seu dia ficar mais ágil e agradável.😉
