@@ -6,7 +6,9 @@ sudo apt-get install git-all
 # show git version
 git --version
 
-if [ $? == 0 ] # last command success
+# last command success
+if [ $? == 0 ] 
 then
-    echo -e "Git sucessfully installed :)\n" # show message
+    # show message
+    echo -e "Git sucessfully installed :)\n"
 fi
